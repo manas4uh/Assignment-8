@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Calculate Quadratic Equations root.</title>
+  <meta charset="utf-8"/>
+  <script>
+ function myQuadraticEquation()
+ {
+ var a=document.getElementById('valueA').value;
+ var b=document.getElementById('valueB').value;
+ var c=document.getElementById('valueC').value;
+ document.getElementById('a').innerHTML=a;
+ document.getElementById('b').innerHTML=b;
+ document.getElementById('c').innerHTML=c;
+ console.log(a,b,c);
+ var d=(b*b)-(4*a*c);
+ var deno=2*a;
+ var sqrd=Math.sqrt(d);
+ if (sqrd==0)
+ {
+ document.getElementById('Equation').innerHTML = "<p> There is real and equal root. </p>";
+var x1=(-b+sqrd)/deno;
+var x2=(-b-sqrd)/deno;
+document.getElementById('x1').innerHTML='x1 ='+x1;
+document.getElementById('x2').innerHTML='x2 ='+x2;
+ }
+ else if (sqrd>0)
+ {
+  document.getElementById('Equation').innerHTML = "<p> There is real and distinct root. </p>";
+var x1=(-b+sqrd)/deno;
+var x2=(-b-sqrd)/deno;
+document.getElementById('x1').innerHTML='x1 ='+x1;
+document.getElementById('x2').innerHTML='x2 ='+x2;
+ }
+ 
+ else
+ {
+ document.getElementById('Equation').innerHTML +=  "<p> There is no real root. </p>";
+ }
+  } 
+  </script>
+  <style>
+  body {
+  padding-left:100px;
+  }
+@media (min-width:992px)
+{
+body {
+padding-left:100px;
+}
+}  
+  
+  </style>
+  </head>
+  <body>
+  <h1>Second Degree Equations</h1>
+  <h2>Quadratic Equation: <span id="a">a</span>x<sup>2</sup>+<span id="b">b</span>x+<span id="c">c</span></h2>
+  <h3>Enter the coefficients of a,b and c in the field below. </h3>
+ 
+  <div class="form-group"> 
+<label for="valueA">Value of a:</label>
+<br>
+<input class="form-control" id="valueA" type="number" placeholder=1 style="width:70%; height:30px; margin-top:20px; border-radius:1px;">  
+
+  </div>
+  <br>
+    <div class="form-group">
+	
+<label for="valueB">Value of b:</label>
+<br>
+<input class="form-control" id="valueB"  type="number"  placeholder=1 style="width:70%; height:30px; margin-top:20px; border-radius:1px;">  
+
+  </div>
+<br>
+  <div class="form-group">
+	
+<label for="valueC">Value of c:</label>
+<br>
+<input class="form-control" id="valueC"  type="number"  placeholder=1 style="width:70%; height:30px; margin-top:20px; border-radius:1px;">  
+
+  </div>
+<br> 
+  <button type="button" style="background-color:blue; border:0px; border-radius:10px; padding:20px; color:white;" class="btn btn-primary"onclick="myQuadraticEquation();" >Solve Equation</button>
+ <div> <p>Result:<span id="Equation" style="display:inline-block"></span></p>
+  </div>
+   
+  <div id ="x1"></div>
+    <div id ="x2"></div>
+  </body>
+  </html>
